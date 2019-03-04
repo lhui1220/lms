@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel {{ config('app.env') }}
+                    Laravel [{{ config('app.env') }}]
                 </div>
 
                 <div class="links">
