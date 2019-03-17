@@ -16,6 +16,11 @@
 
                     You are logged in!
                 </div>
+
+                <div class="card-body">
+                    <a href="{{ url('/session/set') }}">Set</a>
+                    <a href="{{ url('/session/get') }}">Get</a>
+                </div>
             </div>
         </div>
     </div>
