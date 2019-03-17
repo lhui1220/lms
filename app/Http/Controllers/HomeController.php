@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function setSession()
     {
         session([
-            'user' => Str::random(6)],
+            'user' => Str::random(6),
             'time' => Carbon::now()->toDateTimeLocalString()
         ]);
     }
