@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/session/set', 'HomeController@setSession');
+Route::get('/session/get', 'HomeController@getSession');
