@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
 {
@@ -36,7 +37,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function getSession()
+    public function getSession(Request $request)
     {
         $user = session('user');
         $time = session('time');
@@ -44,6 +45,9 @@ class HomeController extends Controller
             'user' => $user,
             'time' => $time
         ];
+        if ($request->input('error')) {
+            throw new \LogicException("参数不正确", 422);
+        }
         return response(json_encode($data));
     }
 }

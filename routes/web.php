@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('access-log')->get('/home', 'HomeController@index')->name('home');
 
-Route::get('/session/set', 'HomeController@setSession');
-Route::get('/session/get', 'HomeController@getSession');
+Route::middleware('access-log')->get('/session/set', 'HomeController@setSession');
+Route::middleware('access-log')->get('/session/get', 'HomeController@getSession');
