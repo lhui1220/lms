@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
@@ -49,5 +50,21 @@ class HomeController extends Controller
             throw new \LogicException("参数不正确", 422);
         }
         return response(json_encode($data));
+    }
+
+    public function coupdate()
+    {
+        $rows = DB::update('update sku_inventory set quantity=quantity-1 where sku=1 and quantity > 0');
+        return response(['code' =>0 ,'data' => $rows]);
+    }
+
+    public function coupdate2()
+    {
+        $inventory = DB::table('sku_inventory')->where('sku', 1)->first();
+        $rows = 0;
+        if ($inventory->quantity > 0) {
+            $rows = DB::update('update sku_inventory set quantity=quantity-1 where sku=1');
+        }
+        return response(['code' =>0 ,'data' => $rows]);
     }
 }

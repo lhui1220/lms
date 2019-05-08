@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/co/update', 'HomeController@coupdate');
+Route::get('/co/update1', 'HomeController@coupdate1');
