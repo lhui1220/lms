@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/co/update', 'HomeController@coupdate');
 Route::get('/co/update1', 'HomeController@coupdate1');
+
+Route::get('/resource', 'HomeController@getResource');
