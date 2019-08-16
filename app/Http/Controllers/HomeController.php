@@ -6,7 +6,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use OpenApi\Annotations\OpenApi as OA;
+use OpenApi\Annotations\Get;
+use OpenApi\Annotations\Info;
+use OpenApi\Annotations\Response;
 
 /**
  * @OA\Info(title="My First API", version="0.1")
