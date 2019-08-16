@@ -6,8 +6,11 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
+use OpenApi\Annotations\OpenApi as OA;
 
+/**
+ * @OA\Info(title="My First API", version="0.1")
+ */
 class HomeController extends Controller
 {
     /**
@@ -66,5 +69,20 @@ class HomeController extends Controller
             $rows = DB::update('update sku_inventory set quantity=quantity-1 where sku=1');
         }
         return response(['code' =>0 ,'data' => $rows]);
+    }
+
+    /**
+     * @OA\Get(
+     *     path="/api/resource.json",
+     *     @OA\Response(response="200", description="An example resource")
+     * )
+     */
+    public function getResource()
+    {
+        $data = [
+            'code' => 200,
+            'message' => 'An example resource'
+        ];
+        return response($data);
     }
 }
