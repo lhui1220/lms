@@ -73,7 +73,7 @@ class HomeController extends Controller
     /**
      * @OA\Get(
      *     path="/api/pets",
-     *     tags={"pet"}
+     *     tags={"pet"},
      *     @OA\Response(response="200", description="An example resource")
      * )
      */
