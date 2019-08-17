@@ -10,9 +10,6 @@ use OpenApi\Annotations\Get;
 use OpenApi\Annotations\Info;
 use OpenApi\Annotations\Response;
 
-/**
- * @OA\Info(title="My First API", version="0.1")
- */
 class HomeController extends Controller
 {
     /**
@@ -75,7 +72,8 @@ class HomeController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/resource.json",
+     *     path="/api/pets",
+     *     tags={"pet"}
      *     @OA\Response(response="200", description="An example resource")
      * )
      */
