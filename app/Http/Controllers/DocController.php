@@ -23,8 +23,8 @@ class DocController extends Controller
     public function index()
     {
         $openapi = \OpenApi\scan(app_path());
-        $doc = $openapi->toYaml();
-        return response($doc, 200, ['Content-Type' => 'application/x-yaml']);
+        $doc = $openapi->toJson();
+        return response($doc, 200, ['Content-Type' => 'application/json']);
     }
 
 }
